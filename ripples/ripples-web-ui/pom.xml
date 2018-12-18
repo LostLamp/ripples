@@ -10,7 +10,7 @@
         <relativePath>../ripples-dependencies/pom.xml</relativePath>
     </parent>
 
-    <artifactId>ripples-web-admin</artifactId>
+    <artifactId>ripples-web-ui</artifactId>
     <packaging>war</packaging>
 
     <dependencies>
@@ -87,24 +87,12 @@
             <artifactId>jstl</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-        </dependency>
-        <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
         </dependency>
         <dependency>
-            <groupId>commons-fileupload</groupId>
-            <artifactId>commons-fileupload</artifactId>
-        </dependency>
-        <dependency>
             <groupId>javax.persistence</groupId>
             <artifactId>persistence-api</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-validator</artifactId>
         </dependency>
         <dependency>
             <groupId>javax.el</groupId>
@@ -118,6 +106,12 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.wave</groupId>
+            <artifactId>ripples-domain</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+            <scope>compile</scope>
         </dependency>
         <!-- Commons End -->
     </dependencies>

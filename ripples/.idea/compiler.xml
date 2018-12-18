@@ -9,13 +9,8 @@
         <module name="ripples-commons" />
         <module name="ripples-domain" />
         <module name="ripples-web-admin (1)" />
-        <module name="ripples-web-api" />
-      </profile>
-      <profile name="Annotation profile for ripples" enabled="true">
-        <sourceOutputDir name="../ripples-web-admin/target/generated-sources/annotations" />
-        <sourceTestOutputDir name="../ripples-web-admin/target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
         <module name="ripples-web-admin (2)" />
+        <module name="ripples-web-api" />
       </profile>
     </annotationProcessing>
   </component>
