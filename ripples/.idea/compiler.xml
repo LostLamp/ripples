@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="ripples-commons" />
+        <module name="ripples-domain" />
+        <module name="ripples-web-admin" />
+        <module name="ripples-web-api" />
+        <module name="ripples-web-ui" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>

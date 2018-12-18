@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wave.ripples.domain.Article">
+
+    <!--字段-->
+    <sql id="column">
+        a.archive_id
+        a.member_id
+        a.content
+        a.view_count
+        a.pub_time
+        a.updated
+        a.good_num
+        a.bad_num
+    </sql>
+
+    <insert id="insert">
+        
+    </insert>
+
+</mapper>
