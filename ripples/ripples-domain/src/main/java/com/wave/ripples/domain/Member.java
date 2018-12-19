@@ -2,16 +2,11 @@ package com.wave.ripples.domain;
 
 
 
-import com.wave.ripples.domain.abstacts.AbstractBaseEntity;
-import lombok.Data;
-
-@Data
-public class Member extends AbstractBaseEntity {
-
 import lombok.Data;
 
 import java.io.Serializable;
 import java.util.Date;
+
 /**
  * 用户表
  * */
