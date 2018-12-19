@@ -17,12 +17,28 @@
         <dependency>
             <groupId>com.wave</groupId>
             <artifactId>ripples-commons</artifactId>
+
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <!--BEGIN MODLES-->
+        <dependency>
+            <groupId>com.wave</groupId>
+            <artifactId>ripples-domain</artifactId>
+
             <version>${project.parent.version}</version>
         </dependency>
         <dependency>
             <groupId>com.wave</groupId>
+
             <artifactId>ripples-domain</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
+            <artifactId>ripples-commons</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+        <!--END MODLES-->
     </dependencies>
 </project>

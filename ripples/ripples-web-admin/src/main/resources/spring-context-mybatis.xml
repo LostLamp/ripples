@@ -14,6 +14,6 @@
 
     <!-- 扫描 Mapper 相当于告诉MyBatis数据访问层在哪 -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.wave.ripples.web.ui.mapper" />
+        <property name="basePackage" value="com.wave.ripples.web.admin.mapper" />
     </bean>
 </beans>
