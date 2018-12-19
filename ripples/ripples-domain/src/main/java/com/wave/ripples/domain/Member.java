@@ -11,7 +11,6 @@ import java.util.Date;
  * 用户表
  * */
 
-
 @Data
 public class Member implements Serializable {
     private Long id;
