@@ -12,7 +12,6 @@
 
     <artifactId>ripples-commons</artifactId>
     <packaging>jar</packaging>
-
     <dependencies>
         <!--BEGIN servlet-api-->
         <dependency>

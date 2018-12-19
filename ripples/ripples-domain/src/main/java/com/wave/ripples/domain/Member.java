@@ -1,5 +1,13 @@
 package com.wave.ripples.domain;
 
+
+
+import com.wave.ripples.domain.abstacts.AbstractBaseEntity;
+import lombok.Data;
+
+@Data
+public class Member extends AbstractBaseEntity {
+
 import lombok.Data;
 
 import java.io.Serializable;
@@ -18,9 +26,10 @@ public class Member implements Serializable {
     private String email;
     private String sex;
     private String avatar;
-    private String introduce;
-    private Long is_admin;
+
+    private Long isAdmin;
     private Long fans;
+
     private Date created;
     private Date updated;
 }
