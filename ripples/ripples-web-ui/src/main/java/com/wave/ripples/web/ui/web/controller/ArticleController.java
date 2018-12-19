@@ -22,15 +22,7 @@ public class ArticleController {
     @Autowired
     private ArticleService articleService;
 
-    /**
-     * 请求 个人发布消息页面
-     *
-     * @return
-     */
-    @GetMapping(value = {"", "main"})
-    public String main() {
-        return "main";
-    }
+
 
     /**
      * 保存发布消息

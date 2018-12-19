@@ -10,8 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class PermissionInterceptor implements HandlerInterceptor {
+
     @Override
-    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object o) throws Exception {
         Member member = (Member) request.getSession().getAttribute(SystemConstants.CHEK_KEY_MEMBER);
         if(member!=null){
             response.sendRedirect("main");
@@ -19,7 +20,6 @@ public class PermissionInterceptor implements HandlerInterceptor {
         }else {
             return true;
         }
-
     }
 
     @Override
