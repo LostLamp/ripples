@@ -14,13 +14,6 @@
     <packaging>jar</packaging>
 
     <dependencies>
-        <!--BEGIN MODULE-->
-        <dependency>
-            <groupId>com.wave</groupId>
-            <artifactId>ripples-commons</artifactId>
-            <version>${parent.version}</version>
-        </dependency>
-        <!--END MODULE-->
         <!--Begin Commons-->
         <dependency>
             <groupId>org.projectlombok</groupId>
