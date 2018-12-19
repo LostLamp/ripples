@@ -1,6 +1,7 @@
 package com.wave.ripples.web.ui.web.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -13,8 +14,8 @@ public class testController {
     public String login(){
         return "login";
     }
-    @RequestMapping(value = "profile")
+    @GetMapping(value = "profile")
     public String profile(){
-        return "user/profile";
+        return "/user/profile";
     }
 }
