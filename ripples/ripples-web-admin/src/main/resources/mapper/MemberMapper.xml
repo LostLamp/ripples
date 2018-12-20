@@ -1,23 +1,86 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.wave.ripples.web.admin.mapper.MemberMapper">
+    <sql id="MemberColumns">
+        m.id,
+        m.membername,
+        m.password,
+        m.phone,
+        m.email,
+        m.sex,
+        m.avatar,
+        m.introduce,
+        m.is_admin AS 'isAdmin',
+        m.fans,
+        m.created,
+        m.updated
+    </sql>
+
+    
+    <select id="getById" resultType="Member">
+        SELECT
+            <include refid="MemberColumns"></include>
+        FROM
+        tb_member AS m
+        WHERE m.id = #{id}
+    </select>
+
     <select id="getByLoginId" resultType="Member">
         SELECT
-            id,
-            membername,
-            password,
-            phone,
-            email,
-            sex,
-            avatar,
-            introduce,
-            is_admin,
-            fans,
-            created,
-            updated
+            <include refid="MemberColumns"></include>
         from
-          tb_member
+          tb_member AS m
         WHERE membername = #{membername} OR phone = #{phone} OR email = #{email}
     </select>
 
+    <select id="page" resultType="Member">
+        SELECT
+        <include refid="MemberColumns" />
+        FROM
+        tb_member AS m
+        <where>
+            <if test="member != null and member.membername != null and member.membername != ''">
+                AND  m.membername LIKE CONCAT('%', #{member.membername}, '%')
+            </if>
+            <if test="member != null and member.phone != null and member.phone != ''">
+                AND  m.phone LIKE CONCAT('%', #{member.phone}, '%')
+            </if>
+            <if test="member != null and member.email != null and member.email != ''">
+                AND  m.email LIKE CONCAT('%', #{member.email}, '%')
+            </if>
+        </where>
+        ORDER BY updated DESC
+        LIMIT #{start}, #{length}
+    </select>
+
+    <select id="count" resultType="Integer">
+        SELECT COUNT(*)
+        FROM
+        tb_member AS m
+        <where>
+            <if test="membername != null and membername != ''">
+                AND m.membername LIKE CONCAT('%', #{membername}, '%')
+            </if>
+            <if test="phone != null and phone != ''">
+                AND m.phone LIKE CONCAT('%', #{phone}, '%')
+            </if>
+            <if test="email != null and email != ''">
+                AND m.email LIKE CONCAT('%', #{email}, '%')
+            </if>
+        </where>
+    </select>
+
+    <update id="update">
+        UPDATE
+        tb_member
+        SET
+        membername = #{membername},
+        <if test="password != null and password != ''">
+            password = #{password},
+        </if>
+        phone = #{phone},
+        email = #{email},
+        updated = #{updated}
+        WHERE id = #{id}
+    </update>
 </mapper>

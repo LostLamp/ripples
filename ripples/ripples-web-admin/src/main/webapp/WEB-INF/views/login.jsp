@@ -50,7 +50,7 @@
 <div class="content">
     <!-- BEGIN LOGIN FORM -->
     <form class="login-form" action="/login" method="post">
-        <h3 class="form-title font-green">涟漪</h3>
+        <h2 class="form-title font-green">涟漪</h2>
         <div class="alert alert-danger display-hide">
             <button class="close" data-close="alert"></button>
             <span> ${message} </span>
@@ -66,11 +66,10 @@
             <label class="control-label visible-ie8 visible-ie9">密码</label>
             <div class="input-icon">
                 <i class="fa fa-lock"></i>
-                <input class="form-control placeholder-no-fix" type="password" autocomplete="off" placeholder="请输入密码" name="loginPwd" />
-            </div>
+                <input class="form-control placeholder-no-fix" type="password" autocomplete="off" placeholder="请输入密码" name="loginPwd" /> </div>
         </div>
         <div class="form-actions">
-            <button type="submit" name="button" class="btn green pull-right" onclick="LoginDate"> 登陆 </button>
+            <button type="submit" class="btn green pull-right"> 登陆 </button>
             <label class="rememberme mt-checkbox mt-checkbox-outline">
                 <input type="checkbox" name="remember" value="1" /> 记住我？
                 <span></span>
@@ -78,7 +77,6 @@
             <a href="javascript:;" id="forget-password" class="forget-password">忘记密码？</a>
         </div>
     </form>
-
     <!-- END LOGIN FORM -->
     <!-- BEGIN FORGOT PASSWORD FORM -->
     <form class="forget-form" action="index.html" method="post">
@@ -98,7 +96,7 @@
 </div>
 <!-- END LOGIN -->
 <!-- BEGIN COPYRIGHT -->
-<div class="copyright"> 2018 &copy; @lianyi.163.com </div>
+<div class="copyright"> 2018 &copy; @ ripple.163.com </div>
 <!-- END COPYRIGHT -->
 <!--[if lt IE 9]>
 <script src="/static/assets/global/plugins/respond.min.js"></script>
@@ -135,11 +133,6 @@
             $('#radio1003').attr('checked', 'checked');
         });
     })
-
-    function changeVerifyCode(){
-        var img = document.getElementById("vCode");
-        img.src = "${pageContext.request.contextPath }/toRegister.action?" + new Date().getTime();
-    }
 </script>
 </body>
 
