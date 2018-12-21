@@ -10,7 +10,8 @@ import java.util.Date;
  * @Author wodef
  * @version 1.0.0
  * @Date 2018/12/19
- */
+ *
+ * */
 @Data
 public class Member  {
     private Long id;

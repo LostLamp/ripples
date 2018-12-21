@@ -45,11 +45,6 @@ public class LoginController {
         }
 
     }
-    @GetMapping(value = {"","main"})
-    public String main(){
-        return "main";
-    }
-
     /**
      * 注销登录
      * @return

@@ -12,10 +12,6 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.wave</groupId>
-            <artifactId>ripples-commons</artifactId>
-            <version>${project.parent.version}</version>
-        </dependency>
         <!--BEGIN MODLES-->
         <dependency>
             <groupId>com.wave</groupId>
