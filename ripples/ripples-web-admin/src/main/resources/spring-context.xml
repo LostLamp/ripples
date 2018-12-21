@@ -14,5 +14,4 @@
     </context:component-scan>
 
     <!-- 配置 Bean Validator 定义 -->
-
 </beans>
