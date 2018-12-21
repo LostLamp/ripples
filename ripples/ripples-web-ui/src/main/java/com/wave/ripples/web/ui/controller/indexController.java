@@ -16,8 +16,6 @@ public class indexController {
      */
     @GetMapping(value = {"", "index"})
     public String index(Model model) {
-        Member memberByLoginId = MemberApi.findMemberByLoginId("lisi");
-        model.addAttribute("member", memberByLoginId);
         return "index";
     }
 }

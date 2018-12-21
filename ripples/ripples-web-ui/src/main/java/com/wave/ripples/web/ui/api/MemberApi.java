@@ -26,7 +26,6 @@ public class MemberApi {
         Member member = null;
         try {
             member = MapperUtils.json2pojoByTree(result, "data", Member.class);
-            System.out.println(member);
         } catch (Exception e) {
             e.printStackTrace();
         }
