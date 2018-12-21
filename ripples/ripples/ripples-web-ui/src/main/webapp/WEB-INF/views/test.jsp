@@ -1,100 +1,143 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Administrator
-  Date: 2018/12/17
-  Time: 19:49
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<!DOCTYPE html>
+<!--
+Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.7
+Version: 4.7.5
+Author: KeenThemes
+Website: http://www.keenthemes.com/
+Contact: support@keenthemes.com
+Follow: www.twitter.com/keenthemes
+Dribbble: www.dribbble.com/keenthemes
+Like: www.facebook.com/keenthemes
+Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
+Renew Support: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
+License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
+-->
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+
 <head>
-    <link rel='stylesheet' id='style-css'  href='../static/assets/apps/test/css/style.css' type='text/css' media='all' />
-    <link rel='stylesheet' id='lmlblog-css'  href='../static/assets/apps/test/css/lmlblog.css' type='text/css' media='all' />
-    <link rel='stylesheet' id='all-css'  href='../static/assets/apps/test/css/all.css' type='text/css' media='all' />
-</head>
-<body>
-<div class="lmlblog-posts-list words" style="background-image:url(../static/assets/apps/test/images/058.png); " data="4197">
+    <meta charset="utf-8" />
+    <title>Metronic Admin Theme #3 | Blog Post</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="Preview page of Metronic Admin Theme #3 for blog post samples" name="description" />
+    <meta content="" name="author" />
+   <jsp:include page="include/head.jsp"/>
+<!-- END HEAD -->
 
-    <!-- 动态内容部分，包括列表 -->
-    <div class="lmlblog-post-user-info">
-        <div class="lmlblog-post-user-info-avatar" user-data="1">
-            <a href="#1" style="display: inline-block;">
-                <span class="lmlblog-vip-icon"></span><img src="../static/assets/apps/test/images/tx2.jpg" class="avatar"><i class="lmlblog-verify lmlblog-verify-a" title="司空琪"></i></a>
-            <div class="lmlblog-user-info-card" style="display: none;">
-                <div class="info_card_loading"><img src="../static/assets/apps/test/picture/chat-loading.gif"><p>资料加载中...</p>
+<body class="page-container-bg-solid">
+<div class="page-wrapper">
+    <div class="page-wrapper-row full-height">
+        <div class="page-wrapper-middle">
+            <!-- BEGIN CONTAINER -->
+            <div class="page-container">
+                <!-- BEGIN CONTENT -->
+                <div class="page-content-wrapper">
+                    <div class="page-content">
+                        <div class="container">
+                            <!-- BEGIN PAGE CONTENT INNER -->
+                            <div class="page-content-inner">
+                                <div class="blog-page blog-content-2">
+                                    <div class="row">
+                                        <div class="col-lg-9">
+                                            <div class="blog-single-content bordered blog-container">
+                                                <!---->
+                                                <div class="blog-comments">
+                                                    <h3 class="sbold blog-comments-title">Comments(30)</h3>
+                                                    <div class="c-comment-list">
+                                                        <div class="media">
+                                                            <div class="media-left">
+                                                                <a href="#">
+                                                                    <img class="media-object" alt="" src="/static/assets/pages/img/avatars/team1.jpg"> </a>
+                                                            </div>
+                                                            <div class="media-body">
+                                                                <h4 class="media-heading">
+                                                                    <a href="#">Sean</a> on
+                                                                    <span class="c-date">23 May 2015, 10:40AM</span>
+                                                                </h4> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. </div>
+                                                        </div>
+                                                        <div class="media">
+                                                            <div class="media-left">
+                                                                <a href="#">
+                                                                    <img class="media-object" alt="" src="/static/assets/pages/img/avatars/team3.jpg"> </a>
+                                                            </div>
+                                                            <div class="media-body">
+                                                                <h4 class="media-heading">
+                                                                    <a href="#">Strong Strong</a> on
+                                                                    <span class="c-date">21 May 2015, 11:40AM</span>
+                                                                </h4> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                                                                <div class="media">
+                                                                    <div class="media-left">
+                                                                        <a href="#">
+                                                                            <img class="media-object" alt="" src="/static/assets/pages/img/avatars/team4.jpg"> </a>
+                                                                    </div>
+                                                                    <div class="media-body">
+                                                                        <h4 class="media-heading">
+                                                                            <a href="#">Emma Stone</a> on
+                                                                            <span class="c-date">30 May 2015, 9:40PM</span>
+                                                                        </h4> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="media">
+                                                            <div class="media-left">
+                                                                <a href="#">
+                                                                    <img class="media-object" alt="" src="/static/assets/pages/img/avatars/team7.jpg"> </a>
+                                                            </div>
+                                                            <div class="media-body">
+                                                                <h4 class="media-heading">
+                                                                    <a href="#">Nick Nilson</a> on
+                                                                    <span class="c-date">30 May 2015, 9:40PM</span>
+                                                                </h4> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. </div>
+                                                        </div>
+                                                    </div>
+                                                    <h3 class="sbold blog-comments-title">Leave A Comment</h3>
+                                                    <form action="#">
+                                                        <div class="form-group">
+                                                            <textarea rows="8" name="message" placeholder="Write comment here ..." class="form-control c-square"></textarea>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <button type="submit" class="btn blue uppercase btn-md sbold btn-block mt-sweetalert"
+                                                            data-title="是否删除?"
+                                                            data-message=""
+                                                            data-type="danger"
+                                                            data-show-confirm-button="true"
+                                                            data-confirm-button-class="btn-success"
+                                                            data-show-cancel-button="true"
+                                                            data-cancel-button-class="btn-default"
+                                                            data-close-on-confirm="false"
+                                                            data-close-on-cancel="false"
+                                                            data-confirm-button-text="确认"
+                                                            data-cancel-button-text="取消"
+                                                            data-popup-title-success="删除成功"
+                                                            data-popup-message-success=""
+                                                            data-popup-title-cancel="取消"
+                                                            data-popup-message-cancel="操作已取消">Submit</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <!---->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END PAGE CONTENT INNER -->
+                        </div>
+                    </div>
+                    <!-- END PAGE CONTENT BODY -->
+                    <!-- END CONTENT BODY -->
                 </div>
+                <!-- END CONTENT -->
             </div>
-        </div>
-
-        <div class="lmlblog-post-user-info-name">
-            <a href="#1">
-                <font style="color:#333;font-weight:600">司空琪</font>
-            </a>
-            <span class="lmlblog-mark lmlblog-lv" title="经验：3815">Lv.6</span><span class="lmlblog-mark lmlblog-vip">VIP 6</span>
-        </div>
-        <div class="lmlblog-post-user-info-time" title="2017-12-14 05:25">12-14 05:25</div>
-    </div><!-- 作者信息 -->
-    <div class="lmlblog-post-setting">
-        <i class="fa fa-angle-down"></i>
-        <div class="lmlblog-post-setting-box">
-            <ul>
-                <a href="#" title="查看全文"><li>查看全文</li></a>
-                <a href="#1" title="访问主页"><li>访问主页</li></a>
-            </ul>
+            <!-- END CONTAINER -->
         </div>
     </div>
-    <div class="lmlblog-post-content ">
-        <a class="post_list_link" href="#">
-            <p>　　疏星淡月，紫陌曲岸，持觞游赏，神移长川。一片彀纹，溶溶泄泄，忽而烟靡云敛。睹一丽人，缦立青水，云蒸雾霭，花衬善睐。荧荧兮若北辰之荣现，扰扰兮若紫玉之生烟。颜如舜华，迫闻素腰华琚摇;和颜静志，远望渌水呈雾绡。戏流光之夜蝶，采舞雪之琼花，流眷眷之眸光，润荣曜之笑靥。</p>
-            <p>　　偶得美人回顾，思之朝朝暮暮。采芝兰以明愫，寄琼琚以作妆。余咏永慕叹道长，彼应影独愿偕芳。才知世有解语，不过琪语溯光。<img src="../static/assets/apps/test/images/66.png" alt="[s-65]" class="wp-smiley">
-                <img src="../static/assets/apps/test/images/8.png" alt="[s-65]" class="wp-smiley"></p></a>
-    </div>
-    <div class="lmlblog-post-images-list clear">
-        <a href="../static/assets/apps/test/images/qi01.jpg" data-fancybox="gallery" data-caption="<i class=&quot;fa fa-copyright&quot;></i> lmlblog">
-            <img src="../static/assets/apps/test/images/qi01.jpg" alt="司空琪吧十一月壁纸"></a>
-        <a href="../static/assets/apps/test/images/qi02.jpg" data-fancybox="gallery" data-caption="<i class=&quot;fa fa-copyright&quot;></i> lmlblog">
-            <img src="../static/assets/apps/test/images/qi02.jpg" alt="司空琪吧十一月壁纸"></a>
-        <a href="../static/assets/apps/test/images/qi03.jpg" data-fancybox="gallery" data-caption="<i class=&quot;fa fa-copyright&quot;></i> lmlblog">
-            <img src="../static/assets/apps/test/images/qi03.jpg" alt="司空琪吧十一月壁纸"></a>
-        <a href="../static/assets/apps/test/images/qi03.jpg" data-fancybox="gallery" data-caption="<i class=&quot;fa fa-copyright&quot;></i> lmlblog">
-            <img src="../static/assets/apps/test/images/qi03.jpg" alt="司空琪吧十一月壁纸"></a>
-        <a href="../static/assets/apps/test/images/qi03.jpg" data-fancybox="gallery" data-caption="<i class=&quot;fa fa-copyright&quot;></i> lmlblog">
-            <img src="../static/assets/apps/test/images/qi03.jpg" alt="司空琪吧十一月壁纸"></a>
-    </div>
-    <div class="lmlblog-post-bar">
-        <li class="lmlblog-no-like" onclick="lmlblog_like_posts(4197,this,&quot;post&quot;);">
-            <i class="lmlblog-icon"></i> <span>5</span>
-        </li>
-        <li onclick="list_comments_show(this);">
-            <i class="lmlblog-icon"></i> <span>5</span>
-        </li>
-        <li onclick="lmlblog_pop_login_style();">
-            <i class="lmlblog-icon"></i>评论 <span>0</span>
-        </li>
-        <li>
-            <i class="lmlblog-icon"></i> <span>1.2w</span>
-        </li>
-        <li class="tag clear">
-            <i class="lmlblog-icon"></i><a href="#2" title="司空琪壁纸"># 司空琪壁纸</a></li>
-    </div>
-    <div class="lmlblog-post-like-list">
-        <a href="#17" id="had_like_11788">
-            <img src="../static/assets/apps/test/picture/11.gif" class="avatar"></a>
-        <a href="#18" id="had_like_11499"><img src="../static/assets/apps/test/picture/12.gif" class="avatar"></a>
-        <a href="#22" id="had_like_11488"><img src="../static/assets/apps/test/picture/20.png" class="avatar">
-            <i class="lmlblog-verify lmlblog-verify-a" title="认证信息：作者许仙白"></i></a><a href="#22" id="had_like_11477">
-        <img src="../static/assets/apps/test/picture/13.gif" class="avatar">
-        <i class="lmlblog-verify lmlblog-verify-a" title="认证信息：168号计师"></i></a><a href="#22" id="had_like_1">
-        <img src="../static/assets/apps/test/images/tx2.jpg" class="avatar">
-        <i class="lmlblog-verify lmlblog-verify-a" title="司空琪"></i></a></div>
-    <div class="lmlblog-post-footer-bar">
-        <span title="2017-12-14 05:25:48">12月14日 05:25</span>
-        <span>电脑端</span><i class="lmlblog-icon" onclick="lmlblog_post_type_open();"></i></div>
-
 </div>
-</div>
-<!--水波-->
-
-<!--水波 END-->
+<jsp:include page="include/foot.jsp"/>
 </body>
-</html>
+</html><!DOCTYPE html>

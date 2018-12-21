@@ -26,5 +26,4 @@ public class Article implements Serializable {
     private Date updated;
     private Integer good_num;
     private Integer bad_num;
-
 }
