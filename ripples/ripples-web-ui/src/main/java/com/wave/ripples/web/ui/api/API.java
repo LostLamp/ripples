@@ -6,4 +6,5 @@ public class API {
 
     // 内容查询接口
     public static final String API_MEMBER = HOST + "/api/v1/member/";
+
 }
