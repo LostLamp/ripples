@@ -34,4 +34,8 @@ public class testController {
     public String photoes(){
         return "photoes/photoes";
     }
+    @GetMapping(value = "article")
+    public String article(){
+        return "article/article";
+    }
 }
