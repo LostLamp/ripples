@@ -1,7 +1,7 @@
 package com.wave.ripples.web.admin.web.interceptor;
 
+import com.wave.ripples.commons.constants.SystemConstants;
 import com.wave.ripples.domain.Member;
-import com.wave.ripples.web.admin.constants.SystemConstants;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 

@@ -1,7 +1,7 @@
 package com.wave.ripples.web.admin.web.controller;
 
+import com.wave.ripples.commons.constants.SystemConstants;
 import com.wave.ripples.domain.Member;
-import com.wave.ripples.web.admin.constants.SystemConstants;
 import com.wave.ripples.web.admin.service.ILoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,7 +24,9 @@ public class LoginController {
         return "login";
     }
 
-
+    /**
+     * 判断登录结果
+     * */
     @PostMapping(value = "login")
     public String login(String loginId, String loginPwd, HttpServletRequest request, Model model) {
         Member member = loginService.login(loginId, loginPwd);
@@ -42,5 +44,14 @@ public class LoginController {
             model.addAttribute("message", "登录失败，用户名或密码错误");
             return "login";
         }
+    }
+
+    /**
+     * 注销
+     */
+    @GetMapping(value = "logout")
+    public String logout(HttpServletRequest request) {
+        request.getSession().invalidate();
+        return "redirect:/login";
     }
 }
