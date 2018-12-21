@@ -50,7 +50,7 @@
                                 <div class="row">
                                     <jsp:include page="../include/menu.jsp"/>
                                     <div class="col-md-9">
-
+                                        
                                     </div>
                                 </div>
                             </div>
