@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wave.ripples.web.api.mapper.ArticleMapper">
+    <sql id="articleColumn">
+        a.archive_id,
+        a.parent_id,
+        a.member_id,
+        a.content,
+        a.collent_count,
+        a.forward_count,
+        a.image,
+        a.good_num,
+        a.comment_num,
+        a.created,
+        a.updated
+    </sql>
+
+    <!--分页展示-->
+    <select id="getAllArticle" resultType="Article">
+        SELECT
+            <include refid="articleColumn"/>
+        FROM
+            tb_article AS a
+        ORDER BY a.updated DESC
+        LIMIT #{start},#{length}
+    </select>
+    <!--分页展示-->
+</mapper>

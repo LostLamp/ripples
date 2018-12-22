@@ -94,7 +94,7 @@ public class HttpClientUtils {
         try {
             // 请求结果
             result = null;
-
+            // 请求方式
             HttpGet httpGet = null;
             HttpPost httpPost = null;
             // 响应
@@ -121,12 +121,13 @@ public class HttpClientUtils {
                 if (params != null && params.length > 0) {
                     // 设置请求对象
                     HttpEntity httpEntity = null;
+                    // 将数组转换成 list 放置进请求对象中
                     httpEntity = new UrlEncodedFormEntity(Arrays.asList(params), "UTF-8");
                     httpPost.setEntity(httpEntity);
                 }
                 httpResponse = httpClient.execute(httpPost);
             }
-
+            // 获取响应结果
             HttpEntity httpEntity = httpResponse.getEntity();
             result = EntityUtils.toString(httpEntity);
         } catch (IOException e) {

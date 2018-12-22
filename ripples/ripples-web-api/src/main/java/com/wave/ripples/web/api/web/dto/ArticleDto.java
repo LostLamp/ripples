@@ -1,23 +1,21 @@
-package com.wave.ripples.domain;
+package com.wave.ripples.web.api.web.dto;
 
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 import java.io.Serializable;
 import java.util.Date;
 
 /**
- * 动态消息 对象实体类
- * <p>@Title Article </p>
+ * 动态消息 传输对象
+ * <p>@Title ArticleDto </p>
  * <p>@Description TODO </p>
  *
  * @Author dz
  * @Version 1.0.0
- * @Date 2018/12/18 15:29
+ * @Date 2018/12/22 9:41
  */
 @Data
-@EqualsAndHashCode(callSuper = false)
-public class Article implements Serializable {
+public class ArticleDto implements Serializable {
     private Long archiveId;
     private Long parentId;
     private Long memberId;
@@ -27,7 +25,4 @@ public class Article implements Serializable {
     private String image;
     private Integer goodNum;
     private Integer commentNum;
-    private Date created;
-    private Date updated;
-
 }

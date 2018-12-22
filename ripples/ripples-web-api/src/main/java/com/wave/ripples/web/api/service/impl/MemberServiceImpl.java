@@ -47,4 +47,25 @@ public class MemberServiceImpl implements MemberService {
         // 密码不匹配返回空
         return null;
     }
+
+    /**
+     * 根据 id 查找实例
+     *
+     * @param id
+     * @return
+     */
+    @Override
+    public Member getById(Long id) {
+        return memberMapper.getById(id);
+    }
+
+    /**
+     * 修改实例信息
+     *
+     * @param member
+     */
+    @Override
+    public void modify(Member member) {
+        memberMapper.modify(member);
+    }
 }

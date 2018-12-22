@@ -17,8 +17,24 @@ public interface MemberMapper {
 
     /**
      * 根据登录 id 查找实例
+     *
      * @param member
      * @return
      */
     Member login(Member member);
+
+    /**
+     * 根据 id 查找实例
+     *
+     * @param id
+     * @return
+     */
+    Member getById(Long id);
+
+    /**
+     * 修改实例信息
+     *
+     * @param member
+     */
+    void modify(Member member);
 }

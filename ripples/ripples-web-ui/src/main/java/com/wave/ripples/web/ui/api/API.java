@@ -7,4 +7,7 @@ public class API {
     // 会员管理接口
     public static final String API_MEMBER = HOST + "/member/login";
 
+    // 动态消息获取接口
+    public static final String API_ARTICLE = HOST + "/article/get/all/article";
+
 }
