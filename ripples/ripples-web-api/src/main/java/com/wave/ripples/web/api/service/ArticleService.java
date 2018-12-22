@@ -16,11 +16,29 @@ import java.util.List;
 public interface ArticleService {
 
     /**
-     * 展示动态消息
-     *
-     * @param start
-     * @param length
+     * 根据 id 查找
+     * @param id
      * @return
      */
-    List<Article> getAllArticle(Integer start, Integer length);
+    Article getById(Long id);
+    /**
+     * 展示动态消息
+     *
+     * @return
+     */
+    List<Article> getAllArticle(Integer begin, Integer length);
+
+    /**
+     * 发布动态消息
+     *
+     * @param article
+     */
+    boolean release(Article article);
+
+    /**
+     * 删除动态消息
+     * @param id
+     * @return
+     */
+    boolean delete(Long id);
 }

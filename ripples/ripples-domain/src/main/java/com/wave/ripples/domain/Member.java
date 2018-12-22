@@ -6,22 +6,22 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * 用户表
+ * 会员 pojo对象实体类
+ * <p>@Title Member </p>
+ * <p>@Description TODO </p>
+ *
+ * @Author dz
+ * @Version 1.0.0
+ * @Date 2018/12/22 17:14
  */
-
 @Data
 public class Member implements Serializable {
-    private Long id;
+    private Long memberId;
     private String membername;
     private String password;
     private String phone;
     private String email;
-    private String sex;
-    private String avatar;
-
-    private Long isAdmin;
     private Long fans;
-
     private Date created;
     private Date updated;
 }

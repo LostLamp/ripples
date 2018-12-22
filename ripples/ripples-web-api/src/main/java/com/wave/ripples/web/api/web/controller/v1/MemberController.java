@@ -47,7 +47,6 @@ public class MemberController {
      */
     @PostMapping(value = "login")
     public BaseResult login(String loginId, String password) {
-        MemberDto memberDto = new MemberDto();
         Member byLoginIdMember = memberService.login(loginId, password);
         // 输入的会员名和密码不正确
         if (byLoginIdMember == null) {
@@ -55,6 +54,7 @@ public class MemberController {
         }
         // 正确
         else {
+            MemberDto memberDto = new MemberDto();
             BeanUtils.copyProperties(byLoginIdMember, memberDto);
             return BaseResult.success("成功", memberDto);
         }
@@ -69,7 +69,7 @@ public class MemberController {
     @PostMapping(value = "modify")
     public BaseResult modify(Member member) {
         // 判断有会员 id 则修改
-        if (member.getId() != null) {
+        if (member.getMemberId() != null) {
             memberService.modify(member);
             return BaseResult.success("修改成功");
         }

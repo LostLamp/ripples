@@ -16,15 +16,12 @@ import java.io.Serializable;
  */
 @Data
 public class MemberDto implements Serializable {
-    private Long id;
+    private Long memberId;
     private String membername;
     // --登录完成后就不将密码传输回 ui 模块--
     @JsonInclude
     private String password;
     private String phone;
     private String email;
-    private String avatar;
-    private String introduce;
-    private Long isAdmin;
     private Long fans;
 }

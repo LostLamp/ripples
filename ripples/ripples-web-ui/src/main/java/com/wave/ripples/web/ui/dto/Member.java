@@ -16,13 +16,10 @@ import java.util.Date;
  */
 @Data
 public class Member implements Serializable {
-    private Long id;
+    private Long memberId;
     private String membername;
     private String password;
     private String phone;
     private String email;
-    private String avatar;
-    private String introduce;
-    private Long isAdmin;
     private Long fans;
 }

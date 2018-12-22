@@ -8,6 +8,11 @@ public class API {
     public static final String API_MEMBER = HOST + "/member/login";
 
     // 动态消息获取接口
-    public static final String API_ARTICLE = HOST + "/article/get/all/article";
+    public static final String API_ARTICLE = HOST + "/article/show";
 
+    // 发布动态消息
+    public static final String API_ARTICLE_RELEASE = HOST + "/article/release";
+
+    // 删除动态消息
+    public static final String API_ARTICLE_DELETE = HOST + "article/delete";
 }

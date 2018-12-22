@@ -4,6 +4,7 @@ import com.wave.ripples.domain.Article;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * 动态消息 对象关系映射
@@ -18,11 +19,30 @@ import java.util.List;
 public interface ArticleMapper {
 
     /**
-     * 展示动态消息
+     * 根据 id 查找实例
      *
-     * @param start
-     * @param length
      * @return
      */
-    List<Article> getAllArticle(Integer start, Integer length);
+    Article getById(Long id);
+
+    /**
+     * 展示动态消息
+     *
+     * @return
+     */
+    List<Article> getAllArticle(Map<String, Object> map);
+
+    /**
+     * 发布动态消息
+     *
+     * @param article
+     */
+    void release(Article article);
+
+    /**
+     * 删除动态消息
+     *
+     * @param id
+     */
+    void delete(Long id);
 }

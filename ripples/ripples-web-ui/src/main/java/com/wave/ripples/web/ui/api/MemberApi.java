@@ -1,6 +1,5 @@
 package com.wave.ripples.web.ui.api;
 
-import com.wave.ripples.commons.dto.BaseResult;
 import com.wave.ripples.commons.utils.HttpClientUtils;
 import com.wave.ripples.commons.utils.MapperUtils;
 import com.wave.ripples.web.ui.dto.Member;

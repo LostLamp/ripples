@@ -20,8 +20,8 @@ public class ArticleDto implements Serializable {
     private Long parentId;
     private Long memberId;
     private String content;
-    private Long collentCont;
-    private Long forwardCont;
+    private Long collentCount;
+    private Long forwardCount;
     private String image;
     private Integer goodNum;
     private Integer commentNum;

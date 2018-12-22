@@ -6,10 +6,7 @@ import com.wave.ripples.web.api.service.ArticleService;
 import com.wave.ripples.web.api.web.dto.ArticleDto;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,6 +27,19 @@ public class ArticleController {
     @Autowired
     private ArticleService articleService;
 
+    @ModelAttribute
+    public Article getByid(Long id) {
+        Article article = null;
+        if (id != null) {
+            article = new Article();
+        }
+        //
+        else {
+            article = articleService.getById(id);
+        }
+        return article;
+    }
+
     /**
      * 展示动态信息
      *
@@ -37,7 +47,7 @@ public class ArticleController {
      * @param length
      * @return
      */
-    @GetMapping(value = "start/{start}/length/{length}")
+    @PostMapping(value = "show/{start}/{length}")
     public BaseResult getAllArticle(@PathVariable(value = "start") Integer start, @PathVariable(value = "length") Integer length) {
         if (length != 0) {
             // 将数据传进 dto 传输集合中
@@ -58,5 +68,39 @@ public class ArticleController {
         else {
             return BaseResult.fail("查询失败，请检查你的网络");
         }
+    }
+
+    /**
+     * 发布动态消息
+     *
+     * @param article
+     * @return
+     */
+    @PostMapping(value = "release")
+    public BaseResult release(Article article) {
+        if (article != null) {
+            boolean release = articleService.release(article);
+            if (release) {
+                return BaseResult.success("发布成功");
+            }
+        }
+        return BaseResult.fail("发布失败");
+    }
+
+    /**
+     * 删除动态消息
+     *
+     * @param id
+     * @return
+     */
+    @GetMapping(value = "delete/{id}")
+    public BaseResult delete(@PathVariable(value = "id") Long id) {
+        if (id != null) {
+            boolean delete = articleService.delete(id);
+            if (delete) {
+                return BaseResult.success("删除成功");
+            }
+        }
+        return BaseResult.fail("删除失败");
     }
 }
