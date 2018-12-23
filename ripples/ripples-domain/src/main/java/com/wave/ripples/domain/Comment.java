@@ -16,10 +16,10 @@ import java.util.Date;
  */
 @Data
 public class Comment implements Serializable {
-    private Long comment_id;
-    private Long parent_id;
-    private Long archive_id;
-    private Long member_id;
+    private Long commemtId;
+    private Long parentId;
+    private Long articleId;
+    private Long memberId;
     private Date created;
     private String content;
 }

@@ -17,10 +17,20 @@ public interface ArticleService {
 
     /**
      * 根据 id 查找
+     *
      * @param id
      * @return
      */
     Article getById(Long id);
+
+    /**
+     * 根据会员 id 查找对应动态消息
+     *
+     * @param memberId
+     * @return
+     */
+    List<Article> getByMemberId(Long memberId);
+
     /**
      * 展示动态消息
      *

@@ -31,7 +31,7 @@ public class MemberServiceImpl implements MemberService {
     @Override
     public Member login(String loginId, String password) {
         Member loginMember = new Member();
-        loginMember.setMembername(loginId);
+        loginMember.setMemberName(loginId);
         loginMember.setEmail(loginId);
         loginMember.setPhone(loginId);
 

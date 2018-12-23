@@ -13,20 +13,41 @@
         a.good_num AS 'goodNum',
         a.comment_num AS 'commentNum',
         a.created,
-        a.updated
+        a.updated,
+        b.membername AS 'memberName'
     </sql>
     <!--动态消息字段-->
 
-    <!--根据 id 查找-->
+    <sql id="join">
+        LEFT JOIN tb_member AS b ON b.member_id = a.member_id
+    </sql>
+
+    <!--根据会员id查询所有动态消息-->
+    <select id="getByMemberId" resultType="Article">
+        SELECT
+            <include refid="articleColumn"/>
+        FROM
+            tb_article AS a
+            <include refid="join"/>
+        <where>
+            <if test="memberId != null and memberId != ''">
+                AND a.member_id = #{memberId}
+            </if>
+        </where>
+    </select>
+    <!--根据会员id查询所有动态消息-->
+
+    <!--根据 id 查找动态消息-->
     <select id="getById" resultType="Article">
         SELECT
             <include refid="articleColumn"/>
         FROM
             tb_article AS a
+            <include refid="join"/>
         WHERE
             archive.id = #{id}
     </select>
-    <!--根据 id 查找-->
+    <!--根据 id 查找动态消息-->
 
     <!--分页查询-->
     <select id="getAllArticle" resultType="Article">
@@ -34,6 +55,7 @@
             <include refid="articleColumn"/>
         FROM
             tb_article AS a
+            <include refid="join"/>
         ORDER BY a.updated DESC
         LIMIT #{start} , #{length}
     </select>
@@ -74,7 +96,7 @@
         DELETE FROM
           tb_article
         WHERE
-            archive_id = #{id}
+            article_id = #{id}
     </delete>
     <!--删除动态消息-->
 </mapper>

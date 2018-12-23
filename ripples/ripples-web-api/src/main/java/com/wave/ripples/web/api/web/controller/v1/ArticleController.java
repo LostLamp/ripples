@@ -3,6 +3,7 @@ package com.wave.ripples.web.api.web.controller.v1;
 import com.wave.ripples.commons.dto.BaseResult;
 import com.wave.ripples.domain.Article;
 import com.wave.ripples.web.api.service.ArticleService;
+import com.wave.ripples.web.api.service.MemberService;
 import com.wave.ripples.web.api.web.dto.ArticleDto;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,9 @@ public class ArticleController {
 
     @Autowired
     private ArticleService articleService;
+
+    @Autowired
+    private MemberService memberService;
 
     @ModelAttribute
     public Article getByid(String articleId) {
@@ -71,6 +75,30 @@ public class ArticleController {
         else {
             return BaseResult.fail("查询失败，请检查你的网络");
         }
+    }
+
+    /**
+     * 根据会员 id 查找动态消息
+     *
+     * @param strMemberId
+     * @return
+     */
+    @GetMapping(value = "member/article/{memberId}")
+    public BaseResult getByMemberId(@PathVariable(value = "memberId") String strMemberId) {
+        Long memberId = Long.parseLong(strMemberId);
+        if (memberId != null) {
+            List<Article> articleList = articleService.getByMemberId(memberId);
+            List<ArticleDto> articleDtoList = new ArrayList<>();
+            if (articleList != null && articleList.size() > 0) {
+            for (Article article : articleList) {
+                ArticleDto articleDto = new ArticleDto();
+                BeanUtils.copyProperties(article, articleDto, ArticleDto.class);
+                articleDtoList.add(articleDto);
+            }
+            }
+            return BaseResult.success("成功",articleDtoList);
+        }
+        return BaseResult.fail("失败");
     }
 
     /**

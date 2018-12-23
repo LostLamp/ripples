@@ -21,6 +21,7 @@
     <sql id="join">
         LEFT JOIN tb_member AS b ON b.member_id = a.member_id
         LEFT JOIN tb_comment AS c ON c.parent_id = a.comment_id
+        LEFT JOIN tb_member AS d ON d.member_id = d.member_id
     </sql>
     <!--联查语句-->
 
@@ -30,6 +31,7 @@
             <include refid="commentColumn"/>
         FROM
             tb_comment AS a
+            <include refid="join"/>
         WHERE
             a.comment_id = #{id}
     </select>

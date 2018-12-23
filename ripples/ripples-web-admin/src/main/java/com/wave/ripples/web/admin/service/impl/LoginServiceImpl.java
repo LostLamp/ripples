@@ -16,7 +16,7 @@ public class LoginServiceImpl implements ILoginService {
     @Override
     public Member login(String loginId, String loginPwd) {
         Member params = new Member();
-        params.setMembername(loginId);
+        params.setMemberName(loginId);
         params.setPhone(loginId);
         params.setEmail(loginId);
 

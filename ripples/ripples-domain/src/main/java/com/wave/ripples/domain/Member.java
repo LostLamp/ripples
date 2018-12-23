@@ -17,7 +17,7 @@ import java.util.Date;
 @Data
 public class Member implements Serializable {
     private Long memberId;
-    private String membername;
+    private String memberName;
     private String password;
     private String phone;
     private String email;

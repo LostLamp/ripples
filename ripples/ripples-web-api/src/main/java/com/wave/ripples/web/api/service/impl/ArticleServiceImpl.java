@@ -41,6 +41,22 @@ public class ArticleServiceImpl implements ArticleService {
     }
 
     /**
+     * 根据会员 id 查找对应动态消息
+     *
+     * @param memberId
+     * @return
+     */
+    @Override
+    public List<Article> getByMemberId(Long memberId) {
+        List<Article> articleList = null;
+        if (memberId != null) {
+            articleList = articleMapper.getByMemberId(memberId);
+
+        }
+        return articleList;
+    }
+
+    /**
      * 展示动态消息
      *
      * @param start
@@ -94,19 +110,19 @@ public class ArticleServiceImpl implements ArticleService {
             // 遍历父评论集合
             for (Comment parent : parentComment) {
                 // 添加每一条父评论 id
-                commentIdList.add(parent.getComment_id());
+                commentIdList.add(parent.getCommemtId());
                 // 获取每一条父评论的所有子评论集合
                 sonComment = commentMapper.getSonComment(parent);
                 // 遍历每一条子评论
                 for (Comment son : sonComment) {
                     // 添加每条子评论进 id 集合
-                    commentIdList.add(son.getComment_id());
+                    commentIdList.add(son.getCommemtId());
                 }
             }
             // 将所有 id 集合里的评论都删除
             commentMapper.deleteMulti((Long[]) commentIdList.toArray());
             // 删除 id 对应的动态消息
-            articleMapper.delete(article.getArchiveId());
+            articleMapper.delete(article.getArticleId());
             return true;
         }
         return false;

@@ -18,7 +18,7 @@ import java.util.Date;
 @Data
 @EqualsAndHashCode(callSuper = false)
 public class Article implements Serializable {
-    private Long archiveId;
+    private Long articleId;
     private Long parentId;
     private Long memberId;
     private String content;
