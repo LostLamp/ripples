@@ -1,5 +1,6 @@
 package com.wave.ripples.domain;
 
+import com.wave.ripples.commons.persistence.AbstractBaseEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -17,14 +18,15 @@ import java.util.Date;
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class Article implements Serializable {
-    private Long archive_id;
-    private Long member_id;
+public class Article extends AbstractBaseEntity {
+    private Long archiveId;
+    private Long parentId;
+    private Long memberId;
     private String content;
-    private Long view_count;
-    private Date pub_time;
+    private Long collentCount;
+    private Long forwardCount;
+    private String image;
+    private Long goodNum;
+    private Long commentNum;
     private Date updated;
-    private Integer good_num;
-    private Integer bad_num;
-
 }

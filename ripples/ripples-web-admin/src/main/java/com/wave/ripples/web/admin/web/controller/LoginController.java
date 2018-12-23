@@ -1,7 +1,7 @@
 package com.wave.ripples.web.admin.web.controller;
 
+import com.wave.ripples.commons.constants.Constants;
 import com.wave.ripples.domain.Member;
-import com.wave.ripples.web.admin.constants.SystemConstants;
 import com.wave.ripples.web.admin.service.ILoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -32,7 +32,7 @@ public class LoginController {
         // 登录成功
         if (member != null) {
             // 将数据放入缓存
-            request.getSession().setAttribute(SystemConstants.CACHE_KEY_MEMBER, member);
+            request.getSession().setAttribute(Constants.CACHE_KEY_MEMBER, member);
             String contextPath = request.getSession().getServletContext().getContextPath();
             System.out.println(contextPath);
             return "redirect:/main";

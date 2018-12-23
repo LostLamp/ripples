@@ -16,4 +16,5 @@
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="com.wave.ripples.web.admin.mapper" />
     </bean>
+
 </beans>

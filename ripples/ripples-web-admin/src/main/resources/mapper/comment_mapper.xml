@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wave.ripples.web.admin.mapper.ICommentMapper">
+    <sql id="CommentColumns">
+      a.comment_id AS commentId,
+      a.parent_id AS parentId,
+      a.archive_id AS archiveId,
+      a.member_id AS memberId,
+      a.created,
+      a.content
+    </sql>
+    <!--分页查询-->
+    <select id="page" resultType="Comment" parameterType="Map">
+        SELECT
+        <include refid="CommentColumns"/>
+        FROM
+        tb_comment AS a
+        <where>
+            <if test="entity.content != null and entity.content !=''">
+                AND a.content LIKE CONCAT('%',#{entity.content},'%')
+            </if>
+        </where>
+        LIMIT #{start},#{length}
+    </select>
+    <!--查询总数据数-->
+    <select id="count" resultType="Integer">
+        SELECT COUNT(*)
+        FROM tb_comment
+        <where>
+            <if test="content != null and content !=''">
+                AND content LIKE CONCAT('%',#{content},'%')
+            </if>
+        </where>
+    </select>
+
+    <!--根据id删除评论-->
+    <delete id="delete">
+        DELETE FROM tb_comment WHERE comment_id= #{id} or parent_id = #{id}
+    </delete>
+
+
+
+    <!--根据id查询信息-->
+    <select id="selectById" resultType="Comment">
+        SELECT
+        <include refid="CommentColumns"/>
+        FROM
+        tb_comment AS a
+        WHERE a.comment_id = #{id}
+    </select>
+
+    <!--查询所有-->
+    <select id="selectAll" resultType="Comment">
+        SELECT
+        <include refid="CommentColumns"/>
+        FROM tb_comment
+    </select>
+</mapper>
