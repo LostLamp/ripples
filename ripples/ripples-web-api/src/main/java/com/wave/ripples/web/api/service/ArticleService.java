@@ -36,9 +36,9 @@ public interface ArticleService {
     boolean release(Article article);
 
     /**
-     * 删除动态消息
-     * @param id
-     * @return
+     * 删除某条动态消息的所有评论
+     *
+     * @param article
      */
-    boolean delete(Long id);
+    boolean deleteMulti(Article article);
 }

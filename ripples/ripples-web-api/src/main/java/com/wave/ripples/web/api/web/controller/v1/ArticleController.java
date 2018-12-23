@@ -28,7 +28,8 @@ public class ArticleController {
     private ArticleService articleService;
 
     @ModelAttribute
-    public Article getByid(Long id) {
+    public Article getByid(String articleId) {
+        Long id = Long.parseLong(articleId);
         Article article = null;
         if (id != null) {
             article = new Article();
@@ -43,12 +44,14 @@ public class ArticleController {
     /**
      * 展示动态信息
      *
-     * @param start
-     * @param length
+     * @param strStart
+     * @param strLength
      * @return
      */
     @PostMapping(value = "show/{start}/{length}")
-    public BaseResult getAllArticle(@PathVariable(value = "start") Integer start, @PathVariable(value = "length") Integer length) {
+    public BaseResult getAllArticle(@PathVariable(value = "start") String strStart, @PathVariable(value = "length") String strLength) {
+        Integer start = Integer.parseInt(strStart);
+        Integer length = Integer.parseInt(strLength);
         if (length != 0) {
             // 将数据传进 dto 传输集合中
             List<ArticleDto> articleDtoList = null;
@@ -90,13 +93,14 @@ public class ArticleController {
     /**
      * 删除动态消息
      *
-     * @param id
+     * @param articleId
      * @return
      */
     @GetMapping(value = "delete/{id}")
-    public BaseResult delete(@PathVariable(value = "id") Long id) {
-        if (id != null) {
-            boolean delete = articleService.delete(id);
+    public BaseResult delete(@PathVariable(value = "id") String articleId) {
+        Article article = articleService.getById(Long.parseLong(articleId));
+        if (article != null) {
+            boolean delete = articleService.deleteMulti(article);
             if (delete) {
                 return BaseResult.success("删除成功");
             }
