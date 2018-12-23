@@ -25,8 +25,9 @@
 <!-- BEGIN THEME GLOBAL SCRIPTS -->
 <script src="/static/assets/global/scripts/app.min.js" type="text/javascript"></script>
 <!-- iCheck 1.0.1 -->
-<script src="/static/assets/global/plugins/icheck/icheck.min.js"></script>
-
+<!--页面勾选框icheck.js-->
+<script src="/static/assets/global/plugins/icheck/icheck.js" type="text/javascript"></script>
+<!--页面勾选框icheck.js-->
 <!-- END THEME GLOBAL SCRIPTS -->
 
 <!-- BEGIN PAGE LEVEL PLUGINS -->

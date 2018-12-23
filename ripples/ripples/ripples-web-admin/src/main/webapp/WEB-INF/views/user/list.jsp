@@ -35,7 +35,7 @@
 
             <ul class="page-breadcrumb breadcrumb"></ul>
 
-            <sys:message />
+            <sys:message/>
 
             <div class="row search-area" style="display: none;">
                 <div class="col-md-12">
@@ -53,7 +53,8 @@
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label class="control-label">姓名</label>
-                                                <input id="memberName" type="text" class="form-control" placeholder="姓名">
+                                                <input id="memberName" type="text" class="form-control"
+                                                       placeholder="姓名">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
@@ -89,7 +90,8 @@
                                 <span class="caption-subject font-blue bold uppercase">用户列表</span>
                             </div>
                             <div class="actions">
-                                <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;" title="搜索" onclick="$('.search-area').toggle('fast');">
+                                <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;" title="搜索"
+                                   onclick="$('.search-area').toggle('fast');">
                                     <i class="icon-magnifier"></i>
                                 </a>
                                 <a class="btn btn-circle btn-icon-only btn-default" href="/user/form" title="新增">
@@ -99,28 +101,27 @@
                         </div>
                         <div class="btn-group">
                             <button id="sample_editable_2_new" class="btn sbold red"
-                                    onclick="">
+                                    onclick="ICheck.delete('/delete/select')">
                                 <i class="fa fa-minus"></i> 批量删除
                             </button>
                         </div>
                         <div class="portlet-body">
-                            <
                             <form action="" id="deleteform">
-                            <table id="dataTable" class="table table-striped table-hover table-bordered">
-                                <thead>
-                                <tr>
-                                    <th>
-                                        <input type="checkbox"  class="icheckbox_minimal check_all"/>
-                                    </th>
-                                    <th> 姓名 </th>
-                                    <th> 手机 </th>
-                                    <th> 邮箱 </th>
-                                    <th> 更新时间 </th>
-                                    <th> 操作 </th>
-                                </tr>
-                                </thead>
-                                <tbody></tbody>
-                            </table>
+                                <table id="dataTable" class="table table-striped table-hover table-bordered">
+                                    <thead>
+                                    <tr>
+                                        <th>
+                                            <input id="checkAll" type="checkbox" class="icheckbox_minimal check_all"/>
+                                        </th>
+                                        <th> 姓名</th>
+                                        <th> 手机</th>
+                                        <th> 邮箱</th>
+                                        <th> 更新时间</th>
+                                        <th> 操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
                             </form>
                         </div>
                     </div>
@@ -133,10 +134,12 @@
 
 <!--模态框-->
 <sys:model message=""/>
+<!--模态框-->
 <%@ include file="../includes/footer.jsp" %>
 <script src="/static/assets/global/scripts/datatable.js" type="text/javascript"></script>
 <script src="/static/assets/global/plugins/datatables/datatables.min.js" type="text/javascript"></script>
-<script src="/static/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js" type="text/javascript"></script>
+<script src="/static/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js"
+        type="text/javascript"></script>
 <script src="/static/assets/apps/ripple/datatables.js" type="text/javascript"></script>
 <script src="/static/assets/apps/ripple/dateutils.js" type="text/javascript"></script>
 <script src="/static/assets/apps/ripple/sweetalert.js" type="text/javascript"></script>
@@ -148,7 +151,7 @@
         _grid = DataTables.initDataTable("/user/page", [
             {
                 "data": function (row, type, set, meta) {
-                    return "<input name='deletesid' id=" + row.id +"value="+row.id+ "  type=\"checkbox\" class=\"icheckbox_minimal\"/>";
+                    return "<input name='deletesid' id=" + row.id + "value=" + row.id + "  type=\"checkbox\" class=\"icheckbox_minimal\"/>";
                 }
             },
             {"data": "memberName"},
@@ -162,22 +165,22 @@
             {
                 "data": function (row, type, set, meta) {
                     return '<a href="/user/form" class="btn blue btn-circle btn-outline sbold uppercase mt-sweetalert"> 新增 </a>&nbsp;&nbsp;' +
-                            '<a href="/user/form?id=' + row.memberId + '" class="btn green btn-circle btn-outline sbold uppercase mt-sweetalert"> 编辑 </a>&nbsp;&nbsp;' +
-                            '<button class="btn red btn-circle btn-outline sbold uppercase mt-sweetalert" \n' +
-                            ' data-title="确定删除当前数据项吗？" \n' +
-                            ' data-type="warning" \n' +
-                            ' data-show-confirm-button="true" \n' +
-                            ' data-confirm-button-class="btn-danger" \n' +
-                            ' data-show-cancel-button="true" \n' +
-                            ' data-cancel-button-class="btn-default" \n' +
-                            ' data-close-on-confirm="false" \n' +
-                            ' data-close-on-cancel="false" \n' +
-                            ' data-confirm-button-text=\'确定\'\n' +
-                            ' data-cancel-button-text=\'取消\' \n' +
-                            ' data-popup-title-success="已删除" \n' +
-                            ' data-popup-title-cancel="已取消" \n' +
-                            ' data-url="/user/delete?id='+ row.memberId +'" \n' +
-                            ' >删除</button>'
+                        '<a href="/user/form?id=' + row.memberId + '" class="btn green btn-circle btn-outline sbold uppercase mt-sweetalert"> 编辑 </a>&nbsp;&nbsp;' +
+                        '<button class="btn red btn-circle btn-outline sbold uppercase mt-sweetalert" \n' +
+                        ' data-title="确定删除当前数据项吗？" \n' +
+                        ' data-type="warning" \n' +
+                        ' data-show-confirm-button="true" \n' +
+                        ' data-confirm-button-class="btn-danger" \n' +
+                        ' data-show-cancel-button="true" \n' +
+                        ' data-cancel-button-class="btn-default" \n' +
+                        ' data-close-on-confirm="false" \n' +
+                        ' data-close-on-cancel="false" \n' +
+                        ' data-confirm-button-text=\'确定\'\n' +
+                        ' data-cancel-button-text=\'取消\' \n' +
+                        ' data-popup-title-success="已删除" \n' +
+                        ' data-popup-title-cancel="已取消" \n' +
+                        ' data-url="/user/delete?id=' + row.memberId + '" \n' +
+                        ' >删除</button>'
                 }
             }
         ]);

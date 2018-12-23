@@ -26,7 +26,7 @@
     <link href="/static/assets/global/css/components-rounded.min.css" rel="stylesheet" id="style_components" type="text/css" />
     <link href="/static/assets/global/css/plugins.min.css" rel="stylesheet" type="text/css" />
     <!-- iCheck for checkboxes and radio inputs -->
-    <link rel="stylesheet" href="/static/assets/global/plugins/icheck/skins/all.css">
+    <link rel="stylesheet" href="/static/assets/global/plugins/icheck/skins/all.css" type="text/css">
     <!-- END THEME GLOBAL STYLES -->
 
     <!-- BEGIN PAGE LEVEL PLUGINS -->

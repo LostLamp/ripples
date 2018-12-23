@@ -29,7 +29,7 @@ var DataTables = function () {
              * 装载完 Ajax 数据之后的回调
              * @param grid
              */
-            onDataLoad: function(grid) {
+            onDataLoad: function (grid) {
             },
             loadingMessage: '加载中...',
             dataTable: {
@@ -46,7 +46,7 @@ var DataTables = function () {
                 ],
                 "pageLength": 10, // default record count per page
                 "ajax": {
-                    "url": url, // ajax source
+                    "url": url // ajax source
                 },
                 "language": {
                     "metronicAjaxRequestGeneralError": "无法完成请求，请检查你的网络",
@@ -76,13 +76,12 @@ var DataTables = function () {
                     }
                 },
                 "drawCallback": function (settings) {
-                    // ICheck.init();
+                    ICheck.init();
                     SweetAlert.init();
                 },
                 buttons: []
             }
         });
-
         return grid;
     };
 
