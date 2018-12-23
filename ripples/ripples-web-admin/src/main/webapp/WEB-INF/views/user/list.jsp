@@ -116,7 +116,7 @@
                                     <th> 手机 </th>
                                     <th> 邮箱 </th>
                                     <th> 更新时间 </th>
-                                    <th> 操作 </th>
+                                    <th style="width: 190px"> 操作 </th>
                                 </tr>
                                 </thead>
                                 <tbody></tbody>
@@ -161,9 +161,9 @@
             },
             {
                 "data": function (row, type, set, meta) {
-                    return '<a href="/user/form" class="btn blue btn-circle btn-outline sbold uppercase mt-sweetalert"> 新增 </a>&nbsp;&nbsp;' +
-                            '<a href="/user/form?id=' + row.memberId + '" class="btn green btn-circle btn-outline sbold uppercase mt-sweetalert"> 编辑 </a>&nbsp;&nbsp;' +
-                            '<button class="btn red btn-circle btn-outline sbold uppercase mt-sweetalert" \n' +
+                    return '<a href="/user/form" class="btn btn-xs green btn-outline sbold uppercase mt-sweetalert">新增<i class="fa fa-user-plus"></i></a>&nbsp;&nbsp;' +
+                            '<a href="/user/form?id=' + row.memberId + '" class="btn btn-xs purple mt-sweetalert btn-outline sbold uppercase"> 编辑<i class="fa fa-edit"></i></a>&nbsp;&nbsp;' +
+                            '<button type="button" class="btn btn-xs red mt-sweetalert btn-outline sbold uppercase"' +
                             ' data-title="确定删除当前数据项吗？" \n' +
                             ' data-type="warning" \n' +
                             ' data-show-confirm-button="true" \n' +
@@ -177,7 +177,7 @@
                             ' data-popup-title-success="已删除" \n' +
                             ' data-popup-title-cancel="已取消" \n' +
                             ' data-url="/user/delete?id='+ row.memberId +'" \n' +
-                            ' >删除</button>'
+                            ' >删除<i class="fa fa-trash"></i></button>'
                 }
             }
         ]);
