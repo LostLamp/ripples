@@ -145,7 +145,7 @@
 
     $(function () {
         _grid = DataTables.initDataTable("/article/page", [
-            {"data": "archiveId"},
+            {"data": "articleId"},
             {"data": "memberId"},
             {"data": "content"},
             {"data": "collentCount"},
@@ -173,7 +173,7 @@
                         ' data-cancel-button-text=\'取消\' \n' +
                         ' data-popup-title-success="已删除" \n' +
                         ' data-popup-title-cancel="已取消" \n' +
-                        ' data-url="/article/delete?id='+row.archiveId+'"\n'+
+                        ' data-url="/article/delete?id='+row.articleId+'"\n'+
                         ' >删除<i class="fa fa-trash"></i></button>'
                 }
             }

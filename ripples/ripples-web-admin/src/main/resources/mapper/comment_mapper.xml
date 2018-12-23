@@ -4,7 +4,7 @@
     <sql id="CommentColumns">
       a.comment_id AS commentId,
       a.parent_id AS parentId,
-      a.archive_id AS archiveId,
+      a.article_id AS articleId,
       a.member_id AS memberId,
       a.created,
       a.content

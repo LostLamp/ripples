@@ -12,7 +12,7 @@ import lombok.EqualsAndHashCode;
 public class Comment extends AbstractBaseEntity {
     private Long commentId;
     private Long parentId;
-    private Long archiveId;
+    private Long articleId;
     private Long memberId;
     private String content;
 }

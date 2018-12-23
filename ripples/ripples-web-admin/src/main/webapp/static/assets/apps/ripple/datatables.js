@@ -76,7 +76,7 @@ var DataTables = function () {
                     }
                 },
                 "drawCallback": function (settings) {
-                    ICheck.init();
+                    // ICheck.init();
                     SweetAlert.init();
                 },
                 buttons: []

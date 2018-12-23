@@ -33,11 +33,17 @@
 
     <!--&lt;!&ndash; 拦截器配置，拦截顺序：先执行后定义的，排在第一位的最后执行。&ndash;&gt;-->
     <mvc:interceptors>
+        <!--登陆拦截器-->
         <mvc:interceptor>
             <mvc:mapping path="/**"/>
             <mvc:exclude-mapping path="/static/**" />
             <mvc:exclude-mapping path="/login" />
             <bean class="com.wave.ripples.web.admin.web.interceptor.LoginInterceptor" />
+        </mvc:interceptor>
+        <!--权限拦截器，如登陆成功后拦截返回登陆页-->
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <bean class="com.wave.ripples.web.admin.web.interceptor.PermissionInterceptor"/>
         </mvc:interceptor>
     </mvc:interceptors>
 

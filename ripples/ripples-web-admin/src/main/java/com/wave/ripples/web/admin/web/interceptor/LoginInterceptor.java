@@ -1,7 +1,7 @@
 package com.wave.ripples.web.admin.web.interceptor;
 
+import com.wave.ripples.commons.constants.Constants;
 import com.wave.ripples.domain.Member;
-import com.wave.ripples.web.admin.constants.SystemConstants;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -18,7 +18,7 @@ public class LoginInterceptor implements HandlerInterceptor {
         boolean flag = true;
 
         HttpSession session = request.getSession();
-        Member member = (Member) session.getAttribute(SystemConstants.CACHE_KEY_MEMBER);
+        Member member = (Member) session.getAttribute(Constants.CACHE_KEY_MEMBER);
 
         // 尚未登录
         if (member == null) {

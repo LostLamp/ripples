@@ -118,7 +118,7 @@
         _grid = DataTables.initDataTable("/comment/page", [
             {"data": "commentId"},
             {"data": "parentId"},
-            {"data": "archiveId"},
+            {"data": "articleId"},
             {"data": "memberId"},
             {"data": "content"},
             {

@@ -43,7 +43,7 @@
 <!-- BEGIN LOGO -->
 <div class="logo">
     <a href="login.jsp">
-        <img src="/static/assets/pages/img/logo-big.png" alt="" /> </a>
+        <img src="/static/image/ripples-loginlogo.png" alt="" /> </a>
 </div>
 <!-- END LOGO -->
 <!-- BEGIN LOGIN -->

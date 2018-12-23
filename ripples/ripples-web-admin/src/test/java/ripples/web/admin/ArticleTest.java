@@ -3,7 +3,6 @@ package ripples.web.admin;
 import com.wave.ripples.commons.dto.PageInfo;
 import com.wave.ripples.domain.Article;
 import com.wave.ripples.web.admin.service.IArticleService;
-import com.wave.ripples.web.admin.service.IBaseService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.wave.ripples.web.admin.mapper.IAritcleMapper">
     <sql id="ArticleColumns">
-         a.archive_id As archiveId,
+         a.article_id As articleId,
          a.parent_id AS parentId,
          a.member_id AS memberId,
          a.content,
@@ -66,8 +66,8 @@
     <delete id="delete">
         DELETE a,b
         FROM tb_article AS a
-        LEFT JOIN tb_comment AS b ON a.archive_id = b.archive_id
-        WHERE a.archive_id = #{id}
+        LEFT JOIN tb_comment AS b ON a.article_id = b.article_id
+        WHERE a.article_id = #{id}
     </delete>
 
 
@@ -77,7 +77,7 @@
         <include refid="ArticleColumns"/>
         FROM
         tb_article AS a
-        WHERE a.archive_id = #{id}
+        WHERE a.article_id = #{id}
     </select>
 
 </mapper>

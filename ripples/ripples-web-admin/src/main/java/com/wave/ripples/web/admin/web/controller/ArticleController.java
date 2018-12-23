@@ -23,7 +23,7 @@ public class ArticleController extends BaseController<Article, IArticleService> 
 
     @GetMapping(value = "delete")
     public String delete(Article article){
-        service.delete(article.getArchiveId());
+        service.delete(article.getArticleId());
         return "redirect:/article/list";
     }
 }

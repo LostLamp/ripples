@@ -12,7 +12,7 @@
 <!-- BEGIN HEAD -->
 
 <head>
-    <title>我的商城 | 用户管理</title>
+    <title>涟漪 | 用户管理</title>
     <%@ include file="../includes/head.jsp" %>
     <%--<link href="/static/assets/global/plugins/datatables/datatables.min.css" rel="stylesheet" type="text/css" />
     <link href="/static/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css" rel="stylesheet" type="text/css" />--%>
