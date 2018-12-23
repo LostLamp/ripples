@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wave.ripples.web.admin.mapper.IAritcleMapper">
+    <sql id="ArticleColumns">
+         a.article_id As articleId,
+         a.parent_id AS parentId,
+         a.member_id AS memberId,
+         a.content,
+         a.collent_count AS collentCount,
+         a.forward_count AS forwardCount,
+         a.created,
+         a.updated,
+         a.image,
+         a.good_num AS goodNum,
+         a.comment_num AS commentNum
+    </sql>
+    <!--分页查询-->
+    <select id="page" resultType="Article" parameterType="Map">
+        SELECT
+        <include refid="ArticleColumns"/>
+        FROM
+        tb_article AS a
+        <where>
+            <if test="entity.content != null and entity.content !=''">
+                AND a.content LIKE CONCAT('%',#{entity.content},'%')
+            </if>
+            <if test="entity.forwardCount != null and entity.forwardCount !=''">
+                AND a.forward_count LIKE CONCAT('%',#{entity.forwardCount},'%')
+            </if>
+            <if test="entity.collentCount != null and entity.collentCount !=''">
+                AND a.collent_count LIKE CONCAT('%',#{entity.collentCount},'%')
+            </if>
+            <if test="entity.goodNum != null and entity.goodNum !=''">
+                AND a.good_num LIKE CONCAT('%',#{entity.goodNum},'%')
+            </if>
+            <if test="entity.commentNum != null and entity.commentNum !=''">
+                AND a.comment_num LIKE CONCAT('%',#{entity.commentNum},'%')
+            </if>
+        </where>
+        LIMIT #{start},#{length}
+    </select>
+    <!--查询总数据数-->
+    <select id="count" resultType="Integer">
+        SELECT COUNT(*)
+        FROM tb_article
+        <where>
+            <if test="content != null and content !=''">
+                AND content LIKE CONCAT('%',#{content},'%')
+            </if>
+            <if test="forwardCount != null and forwardCount !=''">
+                AND forward_count LIKE CONCAT('%',#{forwardCount},'%')
+            </if>
+            <if test="collentCount != null and collentCount !=''">
+                AND collent_count LIKE CONCAT('%',#{collentCount},'%')
+            </if>
+            <if test="goodNum != null and goodNum !=''">
+                AND good_num LIKE CONCAT('%',#{goodNum},'%')
+            </if>
+            <if test="commentNum != null and commentNum !=''">
+                AND comment_num LIKE CONCAT('%',#{commentNum},'%')
+            </if>
+        </where>
+    </select>
+
+    <!--根据id删除消息-->
+    <delete id="delete">
+        DELETE a,b
+        FROM tb_article AS a
+        LEFT JOIN tb_comment AS b ON a.article_id = b.article_id
+        WHERE a.article_id = #{id}
+    </delete>
+
+
+    <!--根据id查询信息-->
+    <select id="selectById" resultType="Article">
+        SELECT
+        <include refid="ArticleColumns"/>
+        FROM
+        tb_article AS a
+        WHERE a.article_id = #{id}
+    </select>
+
+</mapper>
