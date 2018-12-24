@@ -31,4 +31,15 @@ public class LoginServiceImpl implements ILoginService {
         }
         return null;
     }
+
+    /**
+     * 获取邮箱，用于发送信息
+     * @param email
+     * @return
+     */
+    @Override
+    public Member getEmail(String email) {
+        return memberMapper.getEmail(email);
+
+    }
 }

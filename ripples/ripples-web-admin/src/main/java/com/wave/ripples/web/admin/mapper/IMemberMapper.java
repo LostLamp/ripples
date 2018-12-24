@@ -37,4 +37,11 @@ public interface IMemberMapper extends IBaseMapper<Member> {
      * 删除实例
      */
     void delete(Long id);
+
+    /**
+     * 通过邮箱获取会员
+     * @param email
+     * @return
+     */
+    Member getEmail(String email);
 }

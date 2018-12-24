@@ -15,7 +15,10 @@
 
     <!-- BEGIN PAGE LEVEL STYLES -->
     <link href="/static/assets/pages/css/profile.css" rel="stylesheet" type="text/css" />
+    <link href="/static/assets/global/plugins/dropzone/min/dropzone.min.css" rel="stylesheet" type="text/css">
+    <link href="/static/assets/global/plugins/dropzone/min/basic.min.css">
     <!-- END PAGE LEVEL STYLES -->
+
 </head>
 <!-- END HEAD -->
 
@@ -105,30 +108,15 @@
                                                 <!-- END PERSONAL INFO TAB -->
                                                 <!-- CHANGE AVATAR TAB -->
                                                 <div class="tab-pane" id="tab_1_2">
-                                                    <p> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                                                        eiusmod. </p>
                                                     <form action="#" role="form">
                                                         <div class="form-group">
-                                                            <div class="fileinput fileinput-new" data-provides="fileinput">
-                                                                <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
-                                                                    <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="" /> </div>
-                                                                <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"> </div>
-                                                                <div>
-                                                                        <span class="btn default btn-file">
-                                                                            <span class="fileinput-new"> Select image </span>
-                                                                            <span class="fileinput-exists"> Change </span>
-                                                                            <input type="file" name="..."> </span>
-                                                                    <a href="javascript:;" class="btn default fileinput-exists" data-dismiss="fileinput"> Remove </a>
-                                                                </div>
-                                                            </div>
-                                                            <div class="clearfix margin-top-10">
-                                                                <span class="label label-danger">NOTE! </span>
-                                                                <span>Attached image thumbnail is supported in Latest Firefox, Chrome, Opera, Safari and Internet Explorer 10 only </span>
-                                                            </div>
+                                                           <div id="dropz" class="dropzone">
+
+                                                           </div>
                                                         </div>
                                                         <div class="margin-top-10">
-                                                            <a href="javascript:;" class="btn green"> Submit </a>
-                                                            <a href="javascript:;" class="btn default"> Cancel </a>
+                                                            <a href="javascript:;" class="btn default"> 返回 </a>
+                                                            <a href="javascript:;" class="btn green"> 提交 </a>
                                                         </div>
                                                     </form>
                                                 </div>
@@ -169,16 +157,30 @@
 <script src="/static/assets/global/plugins/jquery-validation/js/jquery.validate.min.js" type="text/javascript"></script>
 <script src="/static/assets/global/plugins/jquery-validation/js/localization/messages_zh.min.js" type="text/javascript"></script>
 <script src="/static/assets/global/plugins/jquery-validation/js/additional-methods.min.js" type="text/javascript"></script>
-    <script src="/static/assets/apps/ripple/validation.js" type="text/javascript"></script>
-    <script>
-        $(function () {
-            Validation.initValidation("pwdForm", {
-                confirmPwd: {
-                    equalTo: "#newPwd"
-                }
-            });
+<script src="/static/assets/apps/ripple/validation.js" type="text/javascript"></script>
+<script src="/static/assets/global/plugins/dropzone/min/dropzone.min.js"></script>
+<script>
+    $(function () {
+        Validation.initValidation("pwdForm", {
+            confirmPwd: {
+                equalTo: "#newPwd"
+            }
         });
-    </script>
+    });
+    var myDropzone = new Dropzone("#dropz", {
+        url: "/upload",
+        paramName: "dropFile",
+        maxFiles:1,
+        dictDefaultMessage: '拖动文件至此或者点击上传', // 设置默认的提示语句
+        init: function () {
+            this.on("success", function (file, data) {
+                // 上传成功触发的事件
+                console.log(file);
+                console.log(data);
+            });
+        }
+    });
+</script>
  <!-- END PAGE LEVEL SCRIPTS -->
 </body>
 </html>

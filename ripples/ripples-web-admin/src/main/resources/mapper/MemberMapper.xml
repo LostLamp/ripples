@@ -100,7 +100,7 @@
         );
     </insert>
 
-    <!--关联删除-->
+    <!--通过memberId关联删除-->
     <delete id="delete">
         DELETE a,b,c FROM tb_member AS a
         LEFT JOIN tb_article AS b ON b.member_id = a.member_id
@@ -119,4 +119,13 @@
             #{id}
         </foreach>
     </delete>
+
+    <!--通过邮箱获取用户-->
+    <select id="getEmail" resultType="Member">
+        SELECT
+        <include refid="MemberColumns"></include>
+        FROM
+        tb_member AS a
+        WHERE a.email = #{email}
+    </select>
 </mapper>

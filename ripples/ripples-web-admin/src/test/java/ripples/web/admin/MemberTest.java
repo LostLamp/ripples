@@ -1,8 +1,8 @@
 package ripples.web.admin;
 
 import com.wave.ripples.commons.dto.PageInfo;
-import com.wave.ripples.domain.Article;
 import com.wave.ripples.domain.Member;
+import com.wave.ripples.web.admin.service.ILoginService;
 import com.wave.ripples.web.admin.service.IUserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -20,6 +20,9 @@ public class MemberTest {
     @Autowired
     IUserService userService;
 
+    @Autowired
+    ILoginService loginService;
+
     @Test
     public void testPage(){
         Map map = new HashMap();
@@ -33,5 +36,10 @@ public class MemberTest {
     @Test
     public void testDelete(){
         userService.delete(38l);
+    }
+
+    @Test
+    public void testGetEmail(){
+        loginService.getEmail("1353102168@qq.com");
     }
 }

@@ -81,17 +81,17 @@
 
     <!-- END LOGIN FORM -->
     <!-- BEGIN FORGOT PASSWORD FORM -->
-    <form class="forget-form" action="index.html" method="post">
+    <form class="forget-form" action="/forget" method="post" >
         <h3>忘记密码？ ?</h3>
-        <p> 输入你的邮箱地址以便重置密码 </p>
+        <p> 输入你的邮箱地址以便找回密码 </p>
         <div class="form-group">
             <div class="input-icon">
                 <i class="fa fa-envelope"></i>
-                <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Email" name="email" /> </div>
+                <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Email" name="email"  /> </div>
         </div>
         <div class="form-actions">
             <button type="button" id="back-btn" class="btn red btn-outline">返回 </button>
-            <button type="submit" class="btn green pull-right"> 提交 </button>
+            <button type="submit" class="btn green pull-right" > 提交 </button>
         </div>
     </form>
     <!-- END FORGOT PASSWORD FORM -->
@@ -140,6 +140,7 @@
         var img = document.getElementById("vCode");
         img.src = "${pageContext.request.contextPath }/toRegister.action?" + new Date().getTime();
     }
+
 </script>
 </body>
 
