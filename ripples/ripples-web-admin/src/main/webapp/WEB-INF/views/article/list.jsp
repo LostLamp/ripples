@@ -29,9 +29,6 @@
                     <h1>消息管理</h1>
                 </div>
             </div>
-
-            <ul class="page-breadcrumb breadcrumb"></ul>
-
             <sys:message />
 
             <div class="row search-area" style="display: none;">
@@ -160,7 +157,7 @@
             },
             {
                 "data": function (row, type, set, meta) {
-                    return '<button type="button" class="btn btn-sm red-mint btn-outline mt-sweetalert sbold uppercase"' +
+                    return '<button type="button" class="btn btn-xs red mt-sweetalert btn-outline sbold uppercase"' +
                         ' data-title="确定删除当前数据项吗？" \n' +
                         ' data-type="warning" \n' +
                         ' data-show-confirm-button="true" \n' +

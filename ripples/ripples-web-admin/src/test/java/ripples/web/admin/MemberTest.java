@@ -32,6 +32,6 @@ public class MemberTest {
 
     @Test
     public void testDelete(){
-        userService.delete(2l);
+        userService.delete(38l);
     }
 }

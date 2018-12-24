@@ -32,9 +32,6 @@
                     <h1>用户管理</h1>
                 </div>
             </div>
-
-            <ul class="page-breadcrumb breadcrumb"></ul>
-
             <sys:message />
 
             <div class="row search-area" style="display: none;">
@@ -102,9 +99,9 @@
                                     onclick="">
                                 <i class="fa fa-minus"></i> 批量删除
                             </button>
+
                         </div>
                         <div class="portlet-body">
-                            <
                             <form action="" id="deleteform">
                             <table id="dataTable" class="table table-striped table-hover table-bordered">
                                 <thead>

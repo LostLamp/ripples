@@ -51,8 +51,8 @@
     <!-- BEGIN LOGIN FORM -->
     <form class="login-form" action="/login" method="post">
         <h3 class="form-title font-green">涟漪</h3>
-        <div class="alert alert-danger display-hide">
-            <button class="close" data-close="alert"></button>
+        <div class="alert alert-block ${message == null ? 'display-hide':message.contains('错误')?'alert-danger':'alert-success'} fade in">
+            <button type="button" class="close" data-dismiss="alert"></button>
             <span> ${message} </span>
         </div>
         <div class="form-group">

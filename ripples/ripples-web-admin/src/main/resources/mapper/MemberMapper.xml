@@ -100,8 +100,12 @@
         );
     </insert>
 
+    <!--关联删除-->
     <delete id="delete">
-        DELETE FROM tb_member WHERE member_id = #{id}
+        DELETE a,b,c FROM tb_member AS a
+        LEFT JOIN tb_article AS b ON b.member_id = a.member_id
+        LEFT JOIN tb_comment AS c ON c.member_id = a.member_id
+        WHERE a.member_id = #{memberId};
     </delete>
 
     <!--批量删除-->
