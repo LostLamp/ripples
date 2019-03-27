@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wave.ripples.web.api.mapper.CommentMapper">
+    <!--评论字段-->
+    <sql id="commentColumn">
+        a.comment_id AS 'commentId',
+        a.parent_id AS 'parentId',
+        a.archive_id AS 'archiveId',
+        a.member_id AS 'memberId',
+        a.created,
+        a.content,
+        b.membername AS 'memberName',
+        c.comment_id AS 'commentId',
+        c.member_id AS 'memberId',
+        c.created,
+        c.content
+    </sql>
+    <!--评论字段-->
+
+    <!--联查语句-->
+    <sql id="join">
+        LEFT JOIN tb_member AS b ON b.member_id = a.member_id
+        LEFT JOIN tb_comment AS c ON c.parent_id = a.comment_id
+        LEFT JOIN tb_member AS d ON d.member_id = d.member_id
+    </sql>
+    <!--联查语句-->
+
+    <!--根据 id 查找实例-->
+    <select id="getById" resultType="Comment">
+        SELECT
+            <include refid="commentColumn"/>
+        FROM
+            tb_comment AS a
+            <include refid="join"/>
+        WHERE
+            a.comment_id = #{id}
+    </select>
+    <!--根据 id 查找实例-->
+
+    <!--查找某条动态消息的所有父评论-->
+    <select id="getParentComment" resultType="Comment">
+        SELECT
+            <include refid="commentColumn"/>
+        FROM
+            tb_comment AS a
+            <include refid="join"/>
+        <where>
+            <if test="parentId = null or parentId =''">
+                AND a.article_id = #{articleId}
+            </if>
+        </where>
+    </select>
+    <!--查找某条动态消息的所有父评论-->
+
+    <!--查找某条父评论的所有子评论-->
+    <select id="getSonComment" resultType="Coment">
+        SELECT
+            <include refid="commentColumn"/>
+        FROM
+            tb_comment AS a
+            <include refid="join"/>
+        <where>
+            <if test="parentId != null and parentId != ''">
+                AND a.comment_id = #{parentId}
+            </if>
+        </where>
+    </select>
+    <!--查找某条父评论的所有子评论-->
+
+    <!--删除某条消息的所有评论-->
+    <delete id="deleteMulti">
+        DELETE FROM
+            tb_comment
+        WHERE
+            comment_id
+        IN
+        <foreach collection="array" open="(" close=")" separator="," item="commentId">
+            #{commentId}
+        </foreach>
+    </delete>
+    <!--删除某条消息的所有评论-->
+
+    <!--发表一条评论-->
+    <insert id="add">
+        INSERT INTO
+            tb_comment(
+                parent_id,
+                archive_id,
+                member_id,
+                created,
+                content
+        )
+        VALUES(
+              #{parent_id},
+              #{archive_id},
+              #{member_id},
+              #{created},
+              #{content}
+              )
+    </insert>
+    <!--发表一条评论-->
+</mapper>
